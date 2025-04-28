@@ -14,6 +14,11 @@ dados1.head()
 
 dados1['cidade'].fillna("Desconhecido", inplace=True)
 
+dados1['dobro_idade'] = dados1['idade'] * 2
+
+dados1_grouped = dados1.groupby(['departamento', 'salario']).agg({
+    'Media' : ['mean']
+})
 
 
 
